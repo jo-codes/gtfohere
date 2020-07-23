@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="form">
+           <form method="post">
+               {{ form.csrf_token }}
+               {{ form.name.label }}
+               {{ form.name }}
+               {{ form.money.label }}
+               {{ form.money }}
+               {{ form.submit }}
+           </form>
+        </div>
+
+
+{% endblock %}

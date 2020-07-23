@@ -31,19 +31,19 @@
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
     <div class="numbertext">1 / 3</div>
-    <img src="img1.jpg" style="width:100%">
+    <img src="{{ url_for('static',filename='images/img1.jpg')}}" style="width:100%">
     <div class="text"></div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 3</div>
-    <img src="img2.jpg" style="width:100%">
+    <img src="{{  url_for('static',filename='images/img2.jpg')}}" style="width:100%">
     <div class="text"></div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">3 / 3</div>
-    <img src="img3.jpg" style="width:100%">
+    <img src="{{ url_for('static',filename='images/img3.jpg')}}" style="width:100%">
     <div class="text"></div>
   </div>
 
@@ -71,7 +71,7 @@
 <!--sign up now button-->
 <div style="text-align: center; border: 1px solid">
   <button class="registerButton"
-    onclick="window.location.href = './signup.html';">
+    onclick="window.location.href = './sign_up';">
       Click me to begin
   </button>
 </div>
@@ -91,19 +91,19 @@
   <!-- Full-width images with number and caption text -->
   <div class="testimonials tfade">
     <div class="testimonialnum">1 / 3</div>
-    <img src="review1.JPG" style="width:100%">
+    <img src="{{ url_for('static',filename='images/review1.JPG')}}" style="width:100%">
     <div class="testimonialText">Juan</div>
   </div>
 
   <div class="testimonials tfade">
     <div class="testimonialnum">2 / 3</div>
-    <img src="review2.PNG" style="width:100%">
+    <img src="{{ url_for('static',filename='images/review2.PNG')}}" style="width:100%">
     <div class="testimonialText">Karla</div>
   </div>
 
   <div class="testimonials tfade">
     <div class="testimonialnum">3 / 3</div>
-    <img src="review3.PNG" style="width:100%">
+    <img src="{{ url_for('static',filename='images/review3.PNG')}}" style="width:100%">
     <div class="testimonialText">Yoni</div>
   </div>
 

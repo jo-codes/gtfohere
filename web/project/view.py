@@ -18,6 +18,15 @@ def homepage():
         return flask.render_template("ban_msg.html")
     return flask.render_template("base.html")
 
+@app.route("/sign_up", methods=["GET", "POST"])
+def sign_up():
+    form = forms.Reg()
+    if form.validate_on_submit():
+        sum = form.money.data
+        name = form.name.data
+        print(name, sum)
+    return flask.render_template("sign_up.html", form=form)
+
 
 
 
