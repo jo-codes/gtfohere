@@ -14,7 +14,7 @@ def homepage():
         db.session.add(user)
         db.session.commit()
 
-    if user.created_at + datetime.timedelta(hours=1) > datetime.datetime.now():
+    if user.first_connect + datetime.timedelta(hours=1) > datetime.datetime.now():
         return flask.render_template("ban_msg.html")
     return flask.render_template("base.html")
 
