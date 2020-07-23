@@ -2,17 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+  <title>Title</title>
 <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 </head>
 
 
 <body>
-
-<div class="header">
-  <h1></h1>
-  <p></p>
-</div>
 
 
 <!--	header menu -->
@@ -30,20 +25,20 @@
 
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img src="img1.jpg" style="width:100%">
+    <div class="numbertext">1 of 3</div>
+    <img src="{{ url_for('static',filename='images/img1.jpg') }}" style="width:100%">
     <div class="text"></div>
   </div>
 
   <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="img2.jpg" style="width:100%">
+    <div class="numbertext">2 of 3</div>
+    <img src="{{ url_for('static',filename='images/img2.jpg') }}" style="width:100%">
     <div class="text"></div>
   </div>
 
   <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="img3.jpg" style="width:100%">
+    <div class="numbertext">3 of 3</div>
+    <img src="{{ url_for('static',filename='images/img3.jpg') }}" style="width:100%">
     <div class="text"></div>
   </div>
 
@@ -63,7 +58,7 @@
 
 
 
-<div class="introBlurb" style="text-align: center; color: grey; margin: 25px 110px;font-size: 35px;font-family: Impact, fantasy">
+<div class="introBlurb" style="text-align: center; color: grey; margin: 25px 110px;font-size: 35px;font-family: 'Roboto', sans-serif;">
   <h1 style="color: #2C3539">Get out of here already!</h1>
   <p>GTFOHERE is the newest software that allows users to get the hell out of where they currently are ASAP! </p>
 </div>
@@ -71,18 +66,17 @@
 <!--sign up now button-->
 <div style="text-align: center; border: 1px solid">
   <button class="registerButton"
-    onclick="window.location.href = './signup.html';">
+    onclick="window.location.href = './signup.html'">
       Click me to begin
   </button>
 </div>
 
 <hr>
 
-<div class="checkOutTestimonials" style="text-align: center; color: #2C3539; margin: 25px 110px;font-size: 35px;font-family: Impact, fantasy">
+<div class="checkOutTestimonials" style="text-align: center; color: #2C3539; margin: 25px 110px;font-size: 35px;font-family: 'Roboto', sans-serif;">
   <h1>Testimonials</h1>
   <p>Please scroll through to see what our customers think of us!</p>
 </div>
-
 
 <!-- testimonial container -->
 
@@ -91,19 +85,19 @@
   <!-- Full-width images with number and caption text -->
   <div class="testimonials tfade">
     <div class="testimonialnum">1 / 3</div>
-    <img src="review1.JPG" style="width:100%">
+    <img src="{{ url_for('static',filename='images/review1.JPG') }}" style="width:100%">
     <div class="testimonialText">Juan</div>
   </div>
 
   <div class="testimonials tfade">
     <div class="testimonialnum">2 / 3</div>
-    <img src="review2.PNG" style="width:100%">
+    <img src="{{ url_for('static',filename='images/review2.PNG') }}" style="width:100%">
     <div class="testimonialText">Karla</div>
   </div>
 
   <div class="testimonials tfade">
     <div class="testimonialnum">3 / 3</div>
-    <img src="review3.PNG" style="width:100%">
+    <img src="{{ url_for('static',filename='images/review3.PNG') }}" style="width:100%">
     <div class="testimonialText">Yoni</div>
   </div>
 
@@ -190,6 +184,6 @@ function showTestimonials(n) {
   tdot[testimonialSlideIndex-1].className += " active";
 }
 	</script>
-<script type="text/javascript" src= "../main.js"></script>
+<script type="text/javascript" src= "{{ url_for('static',filename='main.js') }}"></script>
 </body>
 </html>
