@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>Title</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+
+<body>
+
+
+<!--	header menu -->
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#signup">Signup</a>
+  <a href="#news">News</a>
+  <a href="#store">GTFOHERE!</a>
+  <a href="Trips">Trips<a/>
+
+</div>
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 of 3</div>
+    <img src="{{ url_for('static',filename='images/img1.jpg') }}" style="width:100%">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 of 3</div>
+    <img src="{{ url_for('static',filename='images/img2.jpg') }}" style="width:100%">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 of 3</div>
+    <img src="{{ url_for('static',filename='images/img3.jpg') }}" style="width:100%">
+    <div class="text"></div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+
+
+<div class="introBlurb" style="text-align: center; color: grey; margin: 25px 110px;font-size: 35px;font-family: 'Roboto', sans-serif;">
+  <h1 style="color: #2C3539">Get out of here already!</h1>
+  <p>GTFOHERE is the newest software that allows users to get the hell out of where they currently are ASAP! </p>
+</div>
+
+<!--sign up now button-->
+<div style="text-align: center; border: 1px solid">
+  <button class="registerButton"
+    onclick="window.location.href = './signup.html'">
+      Click me to begin
+  </button>
+</div>
+
+<hr>
+
+<div class="checkOutTestimonials" style="text-align: center; color: #2C3539; margin: 25px 110px;font-size: 35px;font-family: 'Roboto', sans-serif;">
+  <h1>Testimonials</h1>
+  <p>Please scroll through to see what our customers think of us!</p>
+</div>
+
+<!-- testimonial container -->
+
+<div class="testimonial-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="testimonials tfade">
+    <div class="testimonialnum">1 / 3</div>
+    <img src="{{ url_for('static',filename='images/review1.JPG') }}" style="width:100%">
+    <div class="testimonialText">Juan</div>
+  </div>
+
+  <div class="testimonials tfade">
+    <div class="testimonialnum">2 / 3</div>
+    <img src="{{ url_for('static',filename='images/review2.PNG') }}" style="width:100%">
+    <div class="testimonialText">Karla</div>
+  </div>
+
+  <div class="testimonials tfade">
+    <div class="testimonialnum">3 / 3</div>
+    <img src="{{ url_for('static',filename='images/review3.PNG') }}" style="width:100%">
+    <div class="testimonialText">Yoni</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class ="previousTestimony" onclick="plusTestimonials(-1)">&#10094;</a>
+  <a class ="nextTestimony" onclick="plusTestimonials(1)">&#10095;</a>
+
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="tdot" onclick="currentTestimony(1)"></span>
+  <span class="tdot" onclick="currentTestimony(2)"></span>
+  <span class="tdot" onclick="currentTestimony(3)"></span>
+</div>
+
+{% block content %}
+
+{% endblock %}
+
+
+
+
+
+
+	<script type="text/javascript">
+		//*********slideshow**********//
+var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    if (slideIndex> slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+ }
+ setInterval(plusSlides, 3000, 1); // call plusSlider, with 1 as parameter
+
+ //***********testimonials***********//
+
+ var testimonialSlideIndex = 1;
+showTestimonials(testimonialSlideIndex);
+
+// Next/previous controls
+function plusTestimonials(n) {
+  showTestimonials(testimonialSlideIndex += n);
+}
+
+// Thumbnail image controls
+function currentTestimony(n) {
+  showTestimonials(testimonialSlideIndex = n);
+}
+
+function showTestimonials(n) {
+  var i;
+  var testimonials = document.getElementsByClassName("testimonials tfade");
+  var tdot = document.getElementsByClassName("tdot");
+  if (n > testimonials.length) {testimonialSlideIndex = 1}
+  if (n < 1) {testimonialSlideIndex = testimonials.length}
+  for (i = 0; i < testimonials.length; i++) {
+      testimonials[i].style.display = "none";
+  }
+  for (i = 0; i < tdot.length; i++) {
+      tdot[i].className = tdot[i].className.replace(" active", "");
+  }
+  testimonials[testimonialSlideIndex-1].style.display = "block";
+  tdot[testimonialSlideIndex-1].className += " active";
+}
+	</script>
+<script type="text/javascript" src= "{{ url_for('static',filename='main.js') }}"></script>
+</body>
+</html>
